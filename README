@@ -1,0 +1,17 @@
+This is a port of Stéphane Raimbault's Modbus library, libmodbus:
+http://libmodbus.org/
+
+The library has been modified so that it may be used as embedded software on
+a microcontroller.
+
+The port has been extensively tested on a Cypress CY8C3245 device.
+
+Files:
+
+main.c		- Top level application code.
+dma_buffer.c/h	- DMA safe ping-pong buffer for interfacing with Cypress USB
+modbus-local.h	- Per-application modbus constants - customise for each use
+modbus-psoc.c	- Cypress PSoC specific code - port this to your uC architecture
+modbus.c	- The modbus stack, based on libmodbus
+modbus.c	- The modbus stack API
+stdint.h	- Use this if your build environment doesnt provide uint8_t...
